@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
 
 * {
-  border: 1px solid red;
+  border: 1px solid rgba(255, 0, 0, 0.055);
 }
 
 :root {
@@ -9,6 +9,19 @@
   --white: #ffffff;
   --drop-shadow: #18456338;
   --dark: rgba(56, 56, 65, 0.849);
+  --red: rgb(228, 57, 80);
+}
+
+button {
+  border: 0;
+  padding: 16px;
+  width: 128px;
+  background-color: var(--blue);
+  font-weight: bold;
+  font-family: inherit;
+  color: white;
+  border-radius: 24px;
+  margin-bottom: 24px;
 }
 
 body {
@@ -26,17 +39,50 @@ body {
 }
 
 label {
-  font-size: 0.7em;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 1em;
 }
 
 .container {
   background: var(--white);
   box-shadow: 0px 16px 48px var(--drop-shadow);
   width: 420px;
-  height: 600px;
+  min-height: 600px;
   border-radius: 32px;
   display: flex;
   justify-content: center;
+  gap: 1em;
   align-items: center;
   flex-direction: column;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.input-container {
+  width: 80%;
+}
+
+h2 {
+  padding-top: 24px;
+}
+
+input {
+  font-size: 16px;
+  padding: 12px;
+  border: 1px solid rgba(108, 112, 116, 0.336);
+  font-family: inherit;
+  border-radius: 8px;
+}
+
+span.notification {
+  font-size: 12px;
+  color: red;
 }
