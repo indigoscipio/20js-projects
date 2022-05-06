@@ -10,16 +10,20 @@ let seats = document.querySelectorAll(".seats-selection > .row >  .seat");
 
 seats.forEach((seat) => {
   seat.addEventListener("click", () => {
+    //count & show the total price
+    movieSelection.addEventListener("change", (e) => {
+      let moviePrice = e.target.value;
+      finalPrice.innerText = `$${moviePrice * selectedSeats.length}`;
+    });
+
+    if (seat.classList.contains("occupied") == true) {
+      console.log("this seat is occupied!");
+    }
+
     //count & update selected seats
     seat.classList.toggle("selected");
     let selectedSeats = document.querySelectorAll(".row > .selected");
     console.log(`Total Selected Seats: ${selectedSeats.length}`);
     finalSeats.innerText = selectedSeats.length;
   });
-});
-
-//count & show the total price
-movieSelection.addEventListener("change", (e) => {
-  let moviePrice = e.target.value;
-  finalPrice.innerText = `$${moviePrice}`;
 });
