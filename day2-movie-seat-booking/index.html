@@ -4,10 +4,128 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ticket Bookings App 🎬</title>
-    <link rel="stylesheet" href="day2.js" />
+    <title>Ticket Bookings App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header><h1>Ticket Bookings App 🎬</h1></header>
+
+    <div class="main-container">
+      <div class="movie-select-container">
+        <label for="movie-select">Pick a Movie: </label>
+        <select name="movies" id="movie-select">
+          <option value="the-batman">The Batman ($20)</option>
+          <option value="the-batman">The Batman 2 ($20)</option>
+          <option value="the-batman">The Batman 3 ($30)</option>
+          <option value="the-batman">The Batman 4 ($40)</option>
+        </select>
+      </div>
+
+      <div class="seats-status">
+        <div class="seat"></div>
+        <span>N/A</span>
+
+        <div class="seat selected"></div>
+        <span>Selected</span>
+
+        <div class="seat occupied"></div>
+        <span>Occupied</span>
+      </div>
+
+      <div class="movie-screen"></div>
+
+      <div class="seats-selection">
+        <div class="row">
+          <div class="seat occupied"></div>
+          <div class="seat selected"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+      </div>
+      <div class="result">
+        <p>You have selected XX for XX Dollars.</p>
+      </div>
+    </div>
+
+    <footer><p>By Samuel Oktavianus</p></footer>
     <script src="day2.js"></script>
   </body>
 </html>
