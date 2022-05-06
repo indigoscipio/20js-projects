@@ -14,10 +14,10 @@
       <div class="movie-select-container">
         <label for="movie-select">Pick a Movie: </label>
         <select name="movies" id="movie-select">
-          <option value="the-batman">The Batman ($20)</option>
-          <option value="the-batman">The Batman 2 ($20)</option>
-          <option value="the-batman">The Batman 3 ($30)</option>
-          <option value="the-batman">The Batman 4 ($40)</option>
+          <option value="20">The Batman ($20)</option>
+          <option value="10">K-On: The Movie ($10)</option>
+          <option value="6">The Fellowship of Rings ($6)</option>
+          <option value="17">The Great Madness ($17)</option>
         </select>
       </div>
 
@@ -121,7 +121,10 @@
         </div>
       </div>
       <div class="result">
-        <p>You have selected XX for XX Dollars.</p>
+        <p>
+          You have selected <span id="final-seats">1</span> seats for
+          <span id="final-price"></span>
+        </p>
       </div>
     </div>
 
