@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+/* * {
+  border: 1px solid rgba(255, 0, 0, 0.164);
+} */
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: azure;
+}
+
+video {
+  border-radius: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+video {
+  width: 720px;
+}
+
+.controls {
+  background-color: cadetblue;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background-color: cadetblue;
+}
+
+#timestamp {
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: azure;
+}
+
+.button .fa-play,
+.button .fa-pause {
+  cursor: pointer;
+  color: rgb(173, 255, 221);
+}
+
+.button .fa-stop {
+  cursor: pointer;
+  color: rgb(216, 67, 67);
+}
+
+.controls input[type="range"] {
+  flex: 1;
+}
