@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 
-* {
-  border: 1px solid rgba(255, 0, 0, 0.13);
-}
-
 body {
   margin: 0;
   padding: 0;
