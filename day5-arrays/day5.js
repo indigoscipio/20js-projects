@@ -1,7 +1,6 @@
-function getRandomUser() {
-  fetch("https://randomuser.me/api/")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data.results[0]);
-    });
+async function getRandomUser() {
+  let res = await fetch("https://randomuser.me/api/");
+  let data = await res.json();
+  let user = data.results[0];
+  console.log(user);
 }
