@@ -2,13 +2,15 @@
 
 * {
   margin: 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 0;
 }
 
 body {
   background-color: aliceblue;
   font-family: "Rubik", sans-serif;
+  overflow: hidden;
+  color: rgb(61, 64, 70);
 }
 
 .game-container {
@@ -72,4 +74,22 @@ button {
 
 button:active {
   transform: scale(0.9);
+}
+
+.notification-container {
+  background-color: cadetblue;
+  color: white;
+  width: 320px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+
+  transform: translateY(100%);
+}
+
+.notification-container.active {
+  transform: translateY(0%);
 }
