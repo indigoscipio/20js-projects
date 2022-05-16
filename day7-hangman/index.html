@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Minimal Hangman</h1>
+      <p>Try to guess the correct word -- you have 5 attempts left.</p>
+      <svg height="250px" width="200px" class="figure-container">
+        <!-- Rod -->
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <line x1="20" y1="230" x2="100" y2="230" />
+        <!-- head -->
+        <circle cx="140" cy="70" r="20"></circle>
+        <!-- body -->
+        <line x1="140" y1="90" x2="140" y2="170" />
+        <!-- arms -->
+        <line x1="120" y1="100" x2="140" y2="130" />
+        <line x1="140" y1="130" x2="160" y2="100" />
+        <!-- legs -->
+        <line x1="140" y1="170" x2="120" y2="200" />
+        <line x1="140" y1="170" x2="160" y2="200" />
+      </svg>
+      <div class="wrong-letters-container">
+        <h3>Wrong Letters:</h3>
+        <span>a,b,c,e,f</span>
+      </div>
+
+      <div class="words-container" id="words-container">
+        <div class="letter">A</div>
+        <div class="letter">B</div>
+        <div class="letter">C</div>
+        <div class="letter">D</div>
+        <div class="letter">E</div>
+        <div class="letter">F</div>
+      </div>
+
+      <div class="popup-container" id="popup-container">
+        <div class="popup-item">
+          <h2>Congratulations! You Win!</h2>
+          <p>Let's play again, shalle we?</p>
+          <button>Play Again</button>
+        </div>
+      </div>
+
+      <div class="notification-container" id="notification-container">
+        <p>You've already entered that letter!</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
