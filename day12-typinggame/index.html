@@ -4,7 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Typing Game</title>
+    <title>Good Ol' Typing Game 🎹</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="header difficulty">
+      Choose thous't Difficulties
+      <input
+        data-level="1"
+        class="input-difficulty"
+        type="radio"
+        id="easy"
+        name="difficulty"
+        checked
+      />
+      <label class="label" for="easy">Easy</label>
+      <input
+        data-level="2"
+        class="input-difficulty"
+        type="radio"
+        id="medium"
+        name="difficulty"
+      />
+      <label class="label" for="medium">Medium</label>
+      <input
+        data-level="3"
+        class="input-difficulty"
+        type="radio"
+        id="hard"
+        name="difficulty"
+      />
+      <label class="label" for="hard">Hard</label>
+    </header>
+
+    <main class="card">
+      <!-- <h2>Halt! For thy game has now ended!!</h2>
+      <p>Thou final score is: XX</p>
+      <button class="button play-again">Tryeth Again?</button> -->
+      <h2>Sire, Type the words below!</h1>
+      <div class="info">
+        <div class="time">Time Left: 60</div>
+        <div class="score">Score: 0</div>
+      </div>
+      <div class="current-word" id="current-word">Current Word</div>
+      <input id="input-word" type="text"/>
+    </main>
+
+    <footer>
+      <p>
+        Good Ol' Typing Game 🎹. Copyright 2022©
+        <a href="http://www.samueloktavianus.com">Samuel Oktavianus</a>
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
