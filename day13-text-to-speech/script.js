@@ -14,7 +14,6 @@ gridItems.forEach((item) => item.addEventListener("click", readGridItem));
 
 function readGridItem() {
   synth.cancel();
-
   text = this.children[1].innerText;
 
   let utterThis = new SpeechSynthesisUtterance(text);
