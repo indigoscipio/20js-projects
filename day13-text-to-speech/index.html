@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Speech 💬💬</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Speech Text Reader 🔊🔊</h1>
+      <button class="button button--toggle">Toggle Options</button>
+    </header>
+    <div class="grid-container">
+      <div class="grid-item">
+        <span>💧</span>
+        <p class="item-label">I'm Thirsty</p>
+      </div>
+      <div class="grid-item">
+        <span>💤</span>
+        <p class="item-label">I'm Tired</p>
+      </div>
+      <div class="grid-item">
+        <span>🍟</span>
+        <p class="item-label">I'm Hungry</p>
+      </div>
+      <div class="grid-item">
+        <span>💎</span>
+        <p class="item-label">I'm Platinum MAD</p>
+      </div>
+      <div class="grid-item">
+        <span>🌈</span>
+        <p class="item-label">I'm Abstract</p>
+      </div>
+      <div class="grid-item">
+        <span>🔥</span>
+        <p class="item-label">I'm Fire</p>
+      </div>
+      <div class="grid-item">
+        <span>🙏</span>
+        <p class="item-label">I'm Grateful</p>
+      </div>
+      <div class="grid-item">
+        <span>☠</span>
+        <p class="item-label">I'm Dead</p>
+      </div>
+      <div class="grid-item">
+        <span>🕊</span>
+        <p class="item-label">I'm Holy</p>
+      </div>
+      <div class="grid-item">
+        <span>🧺</span>
+        <p class="item-label">I'm Basket</p>
+      </div>
+      <div class="grid-item">
+        <span>💔</span>
+        <p class="item-label">I'm Heartbroken</p>
+      </div>
+      <div class="grid-item">
+        <span>🌟</span>
+        <p class="item-label">I'm Star</p>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="icon-close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2>Choose Your Voice</h2>
+      <select name="" id="voices" class="select-input"></select>
+      <textarea
+        placeholder="Enter your text here..."
+        id="textarea"
+        cols="30"
+        rows="4"
+      ></textarea>
+      <button class="button button--read">Read Text</button>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/ffb9bf6e53.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

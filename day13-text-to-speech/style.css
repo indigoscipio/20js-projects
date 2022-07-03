@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Set core body defaults */
+body {
+  color: rgba(10, 34, 57, 0.737);
+  background-color: powderblue;
+  font-size: 2rem;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0.8rem 3.2rem;
+  border-radius: 0.8rem;
+  background-color: rgb(16, 60, 73);
+  color: white;
+}
+
+.button--toggle {
+  margin-top: 2.4rem;
+}
+
+.icon-close {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-close:hover {
+  background-color: lightblue;
+}
+
+.icon-close .line {
+  display: block;
+  width: 24px;
+  height: 1px;
+}
+
+.fa-solid {
+  color: rgb(16, 60, 73);
+}
+
+.header {
+  padding-top: 6.4rem;
+  text-align: center;
+}
+
+.grid-container {
+  margin: 0 auto;
+  gap: 4rem;
+  max-width: 111rem;
+  padding-top: 6.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+.grid-item {
+  background-color: white;
+  cursor: pointer;
+  height: 200px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.grid-item span {
+  font-size: 6.4rem;
+}
+
+.item-label {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: darkcyan;
+  color: lightblue;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.4rem 0;
+}
+
+textarea {
+  padding: 1.6rem;
+}
+
+select {
+  padding: 0.8rem;
+}
+
+.modal {
+  gap: 2.4rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 3.2rem;
+  border-radius: 0.8rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 16px));
+  box-shadow: 0px 16px 32px rgba(36, 36, 39, 0.146);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}
