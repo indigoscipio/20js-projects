@@ -6,7 +6,17 @@ let difficultiesEl = document.querySelectorAll(".input-difficulty");
 let mainCard = document.querySelector(".card");
 
 //Init Variables & States
-let difficulty = 1;
+let difficulty =
+  localStorage.getItem("difficulty") !== null
+    ? +localStorage.getItem("difficulty")
+    : 1;
+var radioCheckedEl = localStorage.getItem("radioCheckedEl");
+let radios = document.getElementsByName("difficulty");
+for (var i = 0; i < radios.length; i++) {
+  if (radios[i].dataset.level == radioCheckedEl) {
+    radios[i].checked = true;
+  }
+}
 let time = 60;
 let words = ["drumsticks", "chuckaboo", "damfino", "dollymop", "rovolveress"];
 let score = 0;
@@ -35,7 +45,15 @@ function setDifficulty() {
     element.addEventListener("click", () => {
       if (element.checked) {
         difficulty = +element.dataset.level;
-        console.log(difficulty);
+
+        //set difficulty to local storage
+        localStorage.setItem("difficulty", difficulty);
+
+        //set button checked state to local storage
+        let radioCheckedEl = document.querySelector(
+          `input[type="radio"]:checked`
+        );
+        localStorage.setItem("radioCheckedEl", +radioCheckedEl.dataset.level);
       }
     });
   });
