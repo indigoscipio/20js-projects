@@ -18,48 +18,38 @@
       </button>
     </header>
 
-    <form class="modal-container">
-      <div class="modal">
+    <div class="modal-container">
+      <form class="modal">
         <div class="icon-close">
           <i class="fa-solid fa-xmark"></i>
         </div>
         <h2>Add New Card</h2>
         <div class="input-item">
           <label for="question">Question</label>
-          <textarea id="answer" cols="30" rows="4"></textarea>
+          <textarea id="question" cols="30" rows="4"></textarea>
         </div>
         <div class="input-item">
           <label for="answer">Answer</label>
           <textarea id="answer" id="" cols="30" rows="4"></textarea>
         </div>
-        <button class="button button--add">
+        <button type="submit" class="button button--submit" id="submit">
           <i class="fa-solid fa-plus"></i>
           Add Card
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
 
-    <!-- <main class="main">
-      <div class="card-container">
+    <main class="main">
+      <div class="card-container hidden">
         <div class="card-slider">
           <input type="checkbox" id="card-1" />
           <label class="flip-card" for="card-1">
             <div class="card front">Front Card</div>
             <div class="card back">Back Card</div>
           </label>
-          <input type="checkbox" id="card-2" />
-          <label class="flip-card" for="card-2">
-            <div class="card front">Front Card</div>
-            <div class="card back">Back Card</div>
-          </label>
-          <input type="checkbox" id="card-3" />
-          <label class="flip-card" for="card-3">
-            <div class="card front">Front Card</div>
-            <div class="card back">Back Card</div>
-          </label>
         </div>
       </div>
-      <div class="slider-info">
+      <div class="slider-info hidden">
         <button class="arrow-left">
           <i class="fa-solid fa-arrow-left"></i>
         </button>
@@ -70,7 +60,7 @@
       </div>
     </main>
 
-    <footer class="footer">
+    <!-- <footer class="footer">
       <button class="button button--delete">
         <i class="fa-solid fa-trash-can"></i>Delete Card
       </button>

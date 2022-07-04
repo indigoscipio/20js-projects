@@ -203,3 +203,62 @@ input[type="checkbox"]:checked + .flip-card .card.front {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.modal-container {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(26, 25, 24, 0.8);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.icon-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-close:hover {
+  background-color: rgba(255, 255, 255, 0.138);
+}
+
+.modal {
+  color: white;
+  width: 48rem;
+  position: relative;
+  display: flex;
+  gap: 3.2rem;
+  flex-direction: column;
+}
+
+.input-item {
+  flex-direction: column;
+  display: flex;
+}
+
+textarea {
+  padding: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}
