@@ -132,11 +132,12 @@ function handlePagination() {
 }
 
 function deleteAllCards() {
+  idx = 0;
   cardsData = [];
   cardSlider.innerHTML = "";
-  let idx = 0;
   document.querySelector(".slider-info").classList.add("hidden");
   document.querySelector(".footer").classList.add("hidden");
+  cardSlider.style.transform = `translateX(0)`;
 }
 
 //Event Listeners
