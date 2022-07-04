@@ -92,8 +92,8 @@ function addCard(e) {
     cardLabel.classList.add("flip-card");
     cardLabel.htmlFor = `${newCardData.id}`;
     cardLabel.innerHTML = `
-    <div class="card front">${newCardData.question}</div>
-    <div class="card back">${newCardData.answer}</div>
+    <div class="card front">Q: ${newCardData.question}</div>
+    <div class="card back">A: ${newCardData.answer}</div>
     `;
 
     cardSlider.append(cardInput);
@@ -103,6 +103,9 @@ function addCard(e) {
     document.querySelector(".card-container").classList.remove("hidden");
     document.querySelector(".footer").classList.remove("hidden");
     showSliderInfo();
+
+    taQuestion.value = "";
+    taAnswer.value = "";
   }
 }
 
