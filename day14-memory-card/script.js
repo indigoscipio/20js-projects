@@ -1,12 +1,11 @@
-let btnPrev = document.querySelector(".arrow-left");
-let btnNext = document.querySelector(".arrow-right");
 let mainContainer = document.querySelector(".main");
 let cards = document.querySelectorAll(".flip-card");
 let btnClose = document.querySelector(".icon-close");
+let btnDelete = document.querySelector("#delete");
 let btnAdd = document.querySelector(".button--add");
 let btnSubmit = document.querySelector("#submit");
+let sliderInfo = document.querySelector(".slider-info");
 let cardSlider = document.querySelector(".card-slider");
-let pagination = document.querySelector(".pagination");
 let modalContainer = document.querySelector(".modal-container");
 let modalEl = document.querySelector(".modal");
 let taQuestion = document.querySelector("#question");
@@ -17,47 +16,49 @@ let idx = 0;
 let space = 1.6;
 let cardsData = [];
 
-// function slideRight() {
-//   idx++;
-//   if (idx > cards.length - 1) {
-//     idx = 0;
-//   }
+function slideRight() {
+  idx++;
+  if (idx >= cardsData.length) {
+    idx = 0;
+  }
 
-//   console.log(idx);
+  console.log(idx);
 
-//   //slide the card to the right
-//   cardSlider.style.transform = `translateX(calc(${-100 * idx}% - ${
-//     space * idx
-//   }rem))`;
+  //slide the card to the right
+  cardSlider.style.transform = `translateX(calc(${-100 * idx}% - ${
+    space * idx
+  }rem))`;
 
-//   //Set or unflip all cards to default
-//   unFlipCard();
-// }
+  //Set or unflip all cards to default
+  handlePagination();
+  unFlipCard();
+}
 
-// function slideLeft() {
-//   idx--;
-//   if (idx < 0) {
-//     idx = cards.length - 1;
-//   }
-//   console.log(idx);
+function slideLeft() {
+  idx--;
+  if (idx < 0) {
+    idx = cardsData.length - 1;
+  }
+  console.log(idx);
 
-//   //slide the card to the left
-//   cardSlider.style.transform = `translateX(calc(${-100 * idx}% - ${
-//     space * idx
-//   }rem))`;
+  //slide the card to the left
+  cardSlider.style.transform = `translateX(calc(${-100 * idx}% - ${
+    space * idx
+  }rem))`;
 
-//   //Set or unflip all cards to default
-//   unFlipCard();
-// }
+  //Set or unflip all cards to default
+  handlePagination();
+  unFlipCard();
+}
 
-// function unFlipCard() {
-//   let cb = document.querySelectorAll(`input[type="checkbox"]:checked`);
-//   cb.forEach((el) => {
-//     if (el.checked) {
-//       el.checked = false;
-//     }
-//   });
-// }
+function unFlipCard() {
+  let cb = document.querySelectorAll(`input[type="checkbox"]:checked`);
+  cb.forEach((el) => {
+    if (el.checked) {
+      el.checked = false;
+    }
+  });
+}
 
 function toggleModal() {
   modalContainer.classList.toggle("active");
@@ -82,34 +83,61 @@ function addCard(e) {
     cardsData.push(newCardData);
     console.log(cardsData);
 
-    //Create card container
-    let cardContainer = document.createElement("div");
-    cardContainer.classList.add("card-container");
+    //Create card input
+    let cardInput = document.createElement("input");
+    cardInput.type = "checkbox";
+    cardInput.id = newCardData.id;
+
+    let cardLabel = document.createElement("label");
+    cardLabel.classList.add("flip-card");
+    cardLabel.htmlFor = `${newCardData.id}`;
+    cardLabel.innerHTML = `
+    <div class="card front">${newCardData.question}</div>
+    <div class="card back">${newCardData.answer}</div>
+    `;
+
+    cardSlider.append(cardInput);
+    cardSlider.append(cardLabel);
+
+    //show slider info & card container
+    document.querySelector(".card-container").classList.remove("hidden");
+    document.querySelector(".footer").classList.remove("hidden");
+    showSliderInfo();
   }
 }
 
-function createSliderInfo() {
-  let sliderInfo = document.createElement("div");
-  sliderInfo.classList.add("slider-info");
+function showSliderInfo() {
+  sliderInfo.classList.remove("hidden");
   sliderInfo.innerHTML = `
         <button class="arrow-left">
             <i class="fa-solid fa-arrow-left"></i>
         </button>
-        <p class="pagination">1/3</p>
+        <p class="pagination">${idx + 1}/${cardsData.length}</p>
         <button class="arrow-right">
              <i class="fa-solid fa-arrow-right"></i>
         </button>`;
 
-  mainContainer.append(sliderInfo);
+  let btnPrev = document.querySelector(".arrow-left");
+  let btnNext = document.querySelector(".arrow-right");
+  btnNext.addEventListener("click", slideRight);
+  btnPrev.addEventListener("click", slideLeft);
+}
+
+function handlePagination() {
+  let pagination = document.querySelector(".pagination");
+  pagination.innerText = `${idx + 1}/${cardsData.length}`;
 }
 
 function deleteAllCards() {
-  return true;
+  cardsData = [];
+  cardSlider.innerHTML = "";
+  let idx = 0;
+  document.querySelector(".slider-info").classList.add("hidden");
+  document.querySelector(".footer").classList.add("hidden");
 }
 
 //Event Listeners
-// btnNext.addEventListener("click", slideRight);
-// btnPrev.addEventListener("click", slideLeft);
 btnClose.addEventListener("click", toggleModal);
 btnAdd.addEventListener("click", toggleModal);
 modalEl.addEventListener("submit", addCard);
+btnDelete.addEventListener("click", deleteAllCards);
