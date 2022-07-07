@@ -4,8 +4,6 @@ let totalDuration = 8000;
 let breatheTime = (totalDuration / 5) * 2;
 let holdTime = totalDuration / 5;
 
-circleContainer.classname = `circle-container`;
-
 breathAnimation();
 function breathAnimation() {
   textInfo.innerText = `Breathe In...`;
